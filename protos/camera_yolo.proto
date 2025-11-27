@@ -1,0 +1,22 @@
+#VRML_SIM R2025a utf8
+# Describe the functionality of your PROTO here.
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/festo/robotino3/protos/Robotino3Webcam.proto"
+
+
+PROTO camera_yolo [
+  field SFRotation rotation 0 0 1 1.57
+  field SFVec3f translation 0 0 0
+]
+{
+Robot {
+  rotation IS rotation
+  translation IS translation
+  children [
+    Robotino3Webcam {
+      translation -0.104 0 -0.3025
+      rotation 0 0 1 1.5707996938995747
+    }
+  ]
+  controller "camera_controller"
+}
+}
