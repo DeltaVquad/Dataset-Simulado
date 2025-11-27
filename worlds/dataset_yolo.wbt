@@ -1,0 +1,31 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/camera_yolo.proto"
+EXTERNPROTO "../protos/imagens_yolo.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.2514211799089998 0.0030869012539160054 0.967872853908929 3.117838302555316
+  position 5.992108853865451 -0.6871507789053423 4.60640982747398
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 5
+}
+camera_yolo {
+  rotation 0.5771972283179124 -0.5776572284998716 -0.5771962283175169 -2.093935307179586
+  translation 0 0 5
+}
+imagens_yolo {
+  imagem_yolo [
+    "../protos/assets/base_decolagem.png"
+  ]
+  translation 0 0 0.02
+}
