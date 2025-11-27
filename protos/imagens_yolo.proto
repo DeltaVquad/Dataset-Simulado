@@ -1,0 +1,45 @@
+#VRML_SIM R2025a utf8
+# Describe the functionality of your PROTO here.
+
+
+PROTO imagens_yolo [
+  field MFString     imagem_yolo       []
+  field SFString   name            "imagem_yolo"
+  field SFVec3f    translation     0. 0. 0.
+  field SFFloat    size            0.8
+
+]
+{
+%<
+// Setting object size constant
+const point_offset = fields.size.value / 2.;
+// Predefined color set
+>%
+  Solid {
+    translation IS translation
+    name IS name
+    children [
+      Shape {
+        appearance Appearance {
+          texture ImageTexture {
+            url IS imagem_yolo
+          }
+        }
+      geometry IndexedFaceSet {
+        coord Coordinate {
+          point [
+            %<= -point_offset >% %<= -point_offset >% 0
+            %<=  point_offset >% %<= -point_offset >% 0
+            %<=  point_offset >% %<=  point_offset >% 0
+            %<= -point_offset >% %<=  point_offset >% 0
+          ]
+        }
+        coordIndex [
+          0, 1, 2, 3, -1
+        ]
+      }
+    }
+    ]
+  }
+
+}
