@@ -2,26 +2,32 @@
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
-EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/RectangleArena.proto"
 EXTERNPROTO "../protos/camera_yolo.proto"
 EXTERNPROTO "../protos/imagens_yolo.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.2514211799089998 0.0030869012539160054 0.967872853908929 3.117838302555316
-  position 5.992108853865451 -0.6871507789053423 4.60640982747398
+  orientation -0.10178042217077977 0.20363035775872385 0.9737429964121911 0.9485010337956943
+  position -6.513759617066334 -6.906489599978 3.0995855331411817
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
+  texture "dawn_cloudy_empty"
 }
 RectangleArena {
-  floorSize 5 5
+  floorSize 10 10
+  floorAppearance Appearance {
+    texture ImageTexture {
+      url [
+        "../textures/sand_base_color.jpg"
+      ]
+    }
+  }
 }
 camera_yolo {
-  hidden translation_1 -0.10399809263851711 1.0108986228233349e-12 -0.3024999999977073
-  hidden rotation_1 -7.850449076788094e-17 -7.850449076788094e-17 1 1.5707996938995745
   rotation 0.5771972283179124 -0.5776572284998716 -0.5771962283175169 -2.093935307179586
   translation 0 0 5
 }

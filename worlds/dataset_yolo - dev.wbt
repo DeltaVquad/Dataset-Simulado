@@ -8,12 +8,14 @@ EXTERNPROTO "../protos/imagens_yolo.proto"
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.14533067794011031 0.16536169344983492 0.9754663010011524 1.4667204792787802
-  position -0.14280237255333117 -4.424273390446043 2.639789080671847
+  orientation -0.20775938545463216 0.18213760792557906 0.9610733216225813 1.741300635579112
+  position 0.9065479290667591 -3.776328526381758 1.9594976477048591
 }
 TexturedBackground {
+  texture "noon_park_empty"
 }
 TexturedBackgroundLight {
+  texture "stadium"
 }
 RectangleArena {
   floorSize 5 5
@@ -313,7 +315,7 @@ Robot {
 }
 imagens_yolo {
   imagem_yolo [
-    "../protos/assets/elementos_M1/estrela_3.png"
+    "../protos/assets/figuras/hexagono_3.png"
   ]
-  translation 0.64 0 0.14
+  translation 0.64 0 0.01
 }
