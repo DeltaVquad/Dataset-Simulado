@@ -20,8 +20,8 @@ const point_offset = fields.size.value / 2.;
     name IS name
     children [
       Shape {
-        appearance Appearance {
-          texture ImageTexture {
+        appearance PBRAppearance {
+          baseColorMap ImageTexture {
             url IS imagem_yolo
           }
         }
