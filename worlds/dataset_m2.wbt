@@ -1,0 +1,44 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "../protos/RectangleArena.proto"
+EXTERNPROTO "../protos/camera_yolo.proto"
+EXTERNPROTO "../protos/MangueiraAlvo.proto"
+EXTERNPROTO "../protos/MangueiraPadrao.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.4069074439722383 0.13583261146640271 -0.9033138068811952 2.5558962279907327
+  position 6.303402107226809 6.00741036102674 10.510667000937648
+}
+TexturedBackground {
+  texture "stadium"
+}
+TexturedBackgroundLight {
+  texture "mars"
+}
+RectangleArena {
+  floorSize 10 10
+  floorTileSize 2 2
+  floorAppearance Appearance {
+    texture ImageTexture {
+      url [
+        "../textures/sand_base_color.jpg"
+      ]
+    }
+  }
+}
+camera_yolo {
+  hidden translation_1 -0.10399435999284101 8.466134280985579e-12 -0.3024999999977103
+  hidden rotation_1 -6.280359261430475e-16 0 1 1.5707996938995745
+  hidden linearVelocity_1 0 0 -6.560078255942639e-07
+  rotation 0.7071067530185183 -0.000282260901410621 -0.7071067530185183 -3.141025307179586
+  translation 0 0 5
+}
+MangueiraAlvo {
+}
+MangueiraPadrao {
+  name "conjunto_mangueira(1)"
+}
