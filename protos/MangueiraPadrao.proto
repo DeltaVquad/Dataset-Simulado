@@ -1,0 +1,85 @@
+#VRML_SIM R2025a utf8
+# Proto referente a mangueira SEM a esfera da missão 2 da Eletroquad 2026.
+
+
+PROTO MangueiraPadrao [
+  field SFVec3f    translation      0 1 1.7   # Posição global do conjunto
+  field SFVec3f    translation_esq  0.8 0 1.3
+  field SFVec3f    translation_dir  0.8 0 -1.3
+  field SFRotation rotation         0 1 0 1.57 # Rotação global
+  field SFString   name             "conjunto_mangueira" # ERRO 1 CORRIGIDO (Aspas)
+]
+{
+%<
+const hose_height = 2.5;
+const hose_radius = 0.00625;
+const sphere_radius = 0.125;
+
+let hose_color = "1 0 0";
+let sphere_color = "1 0.647 0";
+let haste_color = "0 0 0";
+>%
+
+Solid {
+  translation IS translation
+  rotation IS rotation
+  name IS name
+  children [
+    # --- Haste esquerda ---
+    Solid {
+      name "suporte_esq" # WARNING CORRIGIDO (Nome único)
+      translation IS translation_esq   
+      children [              
+        Shape {
+          appearance PBRAppearance {
+            baseColor %<= haste_color >%
+            metalness 0
+            roughness 1
+          }
+          geometry Box {
+            size 1.7 0.2 0.2
+          }
+        }
+      ]
+    }
+    # --- Haste direita ---
+    Solid {
+      name "suporte_dir" # WARNING CORRIGIDO (Nome único)
+      translation IS translation_dir   
+      children [              
+        Shape {
+          appearance PBRAppearance {
+            baseColor %<= haste_color >%
+            metalness 0
+            roughness 1
+          }
+          geometry Box {
+            size 1.7 0.2 0.2
+          }
+        }
+      ]
+    }
+      
+    # --- Mangueira ---
+    Group {
+      children [
+        Transform {
+          children [ 
+            Shape {
+              appearance PBRAppearance {
+                baseColor %<= hose_color >%
+                metalness 0
+                roughness 1
+              }
+              geometry DEF HOSE_GEOM Cylinder {
+                height %<= hose_height >%
+                radius %<= hose_radius >%
+              }
+            }
+          ] 
+        } 
+      ]
+    }
+  ]
+}
+}
