@@ -1,0 +1,47 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "../protos/RectangleArena.proto"
+EXTERNPROTO "../protos/camera_yolo.proto"
+EXTERNPROTO "../protos/imagens_yolo.proto"
+EXTERNPROTO "../protos/Manometros.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.4534369650380272 0.46900553595288963 0.7579107638651438 1.8118646547166912
+  position -0.039332698446781125 -2.42688859685227 5.42262622345709
+}
+TexturedBackground {
+  texture "stadium"
+}
+TexturedBackgroundLight {
+  texture "dawn_cloudy_empty"
+}
+RectangleArena {
+  floorSize 10 10
+  floorAppearance Appearance {
+    texture ImageTexture {
+      url [
+        "../textures/sand_base_color.jpg"
+      ]
+    }
+  }
+}
+Manometros {
+  imagem_manom [
+    "../protos/assets/figuras/manom3.png"
+  ]
+  translation 0 -0.52 0.02
+}
+camera_yolo {
+  rotation 0.5771972283179124 -0.5776572284998716 -0.5771962283175169 -2.093935307179586
+  translation 0 0 5
+}
+imagens_yolo {
+  imagem_yolo [
+    "../protos/assets/figuras/decolagem_m3.png"
+  ]
+  translation 0 0 0.02
+}
