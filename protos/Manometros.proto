@@ -1,0 +1,49 @@
+#VRML_SIM R2025a utf8
+# Describe the functionality of your PROTO here.
+
+
+PROTO Manometros [
+    field MFString     imagem_manom       []
+    field SFString   name            "imagem_manom"
+    field SFVec3f    translation     0. 0. 0.
+    field SFFloat    size            0.127
+
+]
+{
+%<
+// Setting object size constant
+const point_offset = fields.size.value / 2.;
+// Predefined color set
+>%
+  Solid {
+    translation IS translation
+    name IS name
+    children [
+      Shape {
+        castShadows TRUE
+        appearance PBRAppearance {
+          baseColorMap ImageTexture {
+            url IS imagem_manom
+            emissiveColor 0.0
+            roughness 1.0
+            metalness 0.0
+          }
+        }
+      geometry IndexedFaceSet {
+        coord Coordinate {
+          point [
+            %<= -point_offset >% %<= -point_offset >% 0
+            %<=  point_offset >% %<= -point_offset >% 0
+            %<=  point_offset >% %<=  point_offset >% 0
+            %<= -point_offset >% %<=  point_offset >% 0
+          ]
+        }
+        coordIndex [
+          0, 1, 2, 3, -1
+        ]
+      }
+    }
+    ]
+  }
+
+}
